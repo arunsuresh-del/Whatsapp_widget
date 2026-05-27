@@ -43,6 +43,7 @@ const limiter = rateLimit({
   message: { error: 'Too many requests, please slow down.' },
   standardHeaders: true,
   legacyHeaders: false,
+  validate: { xForwardedForHeader: false },
 });
 app.use(limiter);
 
